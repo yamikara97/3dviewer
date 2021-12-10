@@ -1,7 +1,9 @@
-﻿function main() {
+﻿var fishname;
+function main(fishname) {
+
+    $('.presenter').css("right","30px");
     const canvas = document.querySelector('#preview_panel');
     const renderer = new THREE.WebGLRenderer({ canvas: canvas });
-
     const fov = 45;
     const aspect = 2;  // the canvas default
     const near = 0.1;
@@ -14,9 +16,7 @@
     controls.update();
 
     const scene = new THREE.Scene();
-    scene.background = null;
-    var ambient = new THREE.AmbientLight(0x101030);
-    scene.add(ambient);
+    scene.background = new THREE.Color('#00b4ff');
 
     //{
     //    const planeSize = 4000;
@@ -84,11 +84,12 @@
 
     {
         const objLoader = new THREE.OBJLoader2();
-        objLoader.loadMtl('/3d_object/blue_fish/13007_Blue-Green_Reef_Chromis_v2_l3.mtl', null, (materials) => {
+        objLoader.loadMtl('/3d_object/' + fishname + '/' + fishname+'.mtl', null, (materials) => {
             objLoader.setMaterials(materials);
-            objLoader.load('/3d_object/blue_fish/Blue_fish.obj', (event) => {
+            objLoader.load('/3d_object/' + fishname + '/' + fishname+'.obj', (event) => {
                 const root = event.detail.loaderRootNode;
                 scene.add(root);
+
 
                 // compute the box that contains all the stuff
                 // from root and below
@@ -107,7 +108,6 @@
             });
         });
     }
-
     function resizeRendererToDisplaySize(renderer) {
         const canvas = renderer.domElement;
         const width = canvas.clientWidth;

@@ -1,24 +1,54 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
-
+*{
+    transition-duration: 0.5s;
+}
 a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
 }
+
+.presenter {
+    transition-duration: 0.9s;
+    right: -100%;
+    position: fixed !important;
+    padding: 30px;
+    top: 15vh;
+    min-width: 19vw;
+    min-height: 40vh;
+    background-color: white;
+    z-index: 10000000;
+    border-radius: 30px;
+    -webkit-box-shadow: 4px 6px 14px -4px #000000;
+    box-shadow: 4px 6px 14px -4px #000000;
+}
+
 #preview_panel {
     border-top-right-radius: 60px;
     border-bottom-right-radius: 60px;
-
 }
-.img-click{
+.left-scroll {
+    list-style: none;
+    height: 67vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.img-click {
     cursor: pointer;
-
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: center;
 }
 
+.img-click:hover {
+    transform: scale(1.21);
+}
 canvas {
-    background-image: url('wp5294100.jpg');
     height: 80vh !important;
+    cursor: pointer;
     width: auto !important;
     background-repeat: no-repeat;
     background-size: contain;

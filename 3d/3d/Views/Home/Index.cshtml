@@ -3,13 +3,47 @@
 }
 
 <div class="presenter">
-
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <label class="text-info font-weight-bold">Thông tin về mẫu vật</label>
+            </div>
+        </div>
+        <div class="row">
+            <ul class="list-group col-12">
+                <li class="list-group-item">Tên khoa học: <p id="name"></p></li>
+                <li class="list-group-item">Màu sắc: <p id="color"></p></li>
+                <li class="list-group-item">Môi trường sống: <p id="place"></p></li>
+                <li class="list-group-item">Đặc tính: <p id="infomation"></p></li>
+                <li class="list-group-item">Cân nặng trung bình: <p id="weight"></p></li>
+                <li class="list-group-item">Tuổi thọ: <p id="age"></p></li>
+                <li class="list-group-item">Thuộc diện bảo tồn: <p id="redbook"></p></li>
+            </ul>
+        </div>
+    </div>
 </div>
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-3">
-            <img class="img-thumbnail img-click" onclick="main()" src="~/3d_object/blue_fish/bluefish_avatar.jpg" />
+            <ul class="list-group">
+                <li class=" list-group-item text-info font-weight-bold">Danh mục sinh vật biển</li>
+                <li class=" list-group-item text-info font-weight-bold pt-2 pb-2">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <input type="text" class="form-control col-9" name="name" placeholder="Tìm kiếm..." value="" />
+                            <button class="btn btn-info col-3 pl-3"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                    
+                </li>
+            </ul>
+            <ul class="list-group left-scroll">
+                <li class="list-group-item item-fish"><img class="img-click" onclick="main('Blue_fish')" src="~/3d_object/blue_fish/bluefish_avatar.jpg" /></li>
+                <li class="list-group-item item-fish"><img class="img-click" onclick="main('cachep')" src="~/css/fish_texture.png" /></li>
+                <li class="list-group-item item-fish"><img class=" img-click" onclick="main('cathienthan')" src="~/3d_object/cathienthan/cathienthan.jpg" /></li>
+                <li class="list-group-item item-fish"><img class=" img-click" onclick="main('TUNA')" src="~/3d_object/TUNA/TUNA.JPG" /></li>
+            </ul>
         </div>
         <canvas class="col-9" id="preview_panel"></canvas>
     </div>
